@@ -1,2 +1,46 @@
-<p>nav-bar works!</p>
-<app-search></app-search>
+<nav class="navbar w-100 navbar-expand-lg justify-content-around bg-light">
+  <div class="d-flex justify-content-around w-100 bg-light">
+    <a class="navbar-brand" routerLink="/recipes">
+      <img src="assets/images/logo.png" alt="logo" class="logo-box" />
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div
+      class="collapse navbar-collapse w-50 flex-grow-0 justify-content-between"
+      id="navbarSupportedContent"
+    >
+      <ul class="navbar-nav mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a
+            class="nav-link special-font"
+            routerLink="/recipes"
+            routerLinkActive="active-link"
+            >Recipes</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link special-font"
+            routerLink="/favorite-recipes"
+            routerLinkActive="active-link"
+          >
+            Favorites
+          </a>
+        </li>
+      </ul>
+
+      <app-search></app-search>
+    </div>
+  </div>
+</nav>
+<!-- <router-outlet></router-outlet> -->
