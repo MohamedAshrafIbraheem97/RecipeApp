@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Dekko&display=swap");
+@import "/src/styles/colors.scss";
+
 .pacifico-regular {
   font-style: normal;
 }
@@ -9,4 +12,11 @@
 
 .special-font {
   font-family: "Pacifico", cursive;
+}
+.primary-color {
+  color: $primary-color;
+}
+
+body {
+  font-family: "Dekko", cursive;
 }

@@ -1,0 +1,50 @@
+@import "/src/styles/colors.scss";
+.card {
+  position: relative;
+  border-color: $primary-color;
+  & .card-img-top {
+    height: 10rem;
+    width: 100%;
+    object-fit: cover;
+  }
+  & .break-line {
+    height: 0.5px;
+    background: $info-color;
+    width: 90%;
+    margin: 0 auto;
+    opacity: 50%;
+  }
+  & .card-body {
+    & .card-title {
+      color: $primary-color;
+      font-weight: 700;
+    }
+
+    & .card-text {
+      color: $dark-bale-color;
+    }
+  }
+}
+
+.favorite-icon {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  border-radius: 50%;
+  height: 2.5rem;
+  width: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.4rem;
+  color: $dark-bale-color;
+  background-color: $light-color;
+  -webkit-box-shadow: 0px 0px 16px 0px $shadow-color;
+  -moz-box-shadow: 0px 0px 16px 0px $shadow-color;
+  box-shadow: 0px 0px 16px 0px $shadow-color;
+  cursor: pointer;
+
+  & .fa-heart {
+    color: $primary-color;
+  }
+}
