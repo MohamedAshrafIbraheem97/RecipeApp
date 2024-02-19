@@ -1,31 +1,52 @@
 <div class="row gy-5">
-    <div class="col-12 col-lg-7">
-        <div class="image-box rounded-5 overflow-hidden shadow-effect position-relative ">
-            <img src="../../../../assets/images/logo.png" class="food-image" alt="">
-            <div class="favorite-icon shadow-effect" (click)="addToFavorites()">
-                <i class="fa fa-heart-o" aria-hidden="true"></i>
-                <!-- <i class="fa fa-heart" aria-hidden="true"></i> -->
-              </div>
-        </div>
+  <div class="col-12 col-lg-7">
+    <div
+      class="image-box rounded-5 overflow-hidden shadow-effect position-relative"
+    >
+      <img [src]="recipe.image" class="food-image" [alt]="recipe.title" />
+      <div class="favorite-icon shadow-effect" (click)="addToFavorites()">
+        <i class="fa fa-heart-o" aria-hidden="true"></i>
+        <!-- <i class="fa fa-heart" aria-hidden="true"></i> -->
+      </div>
     </div>
-    <div class="col-12 col-lg-5">
-        <div class="recipe-details">
-            <h2 class="special-font">cherry ice cream</h2>
-            <h6 class="dark-bale-color"><span class="primary-color">$20.02</span>  &#47; per serving</h6>
-            <p class="recipe-details-content dark-bale-color">SafeValue must use [property]=binding: Lamb’s Lettuce & Crispy Bacon Salad is a gluten free, dairy free, paleolithic, and primal hor d'oeuvre. This recipe serves 2. For $3.07 per serving, this recipe covers 11% of your daily requirements of vitamins and minerals. One serving contains 334 calories, 7g of protein, and 32g of fat. Not a lot of people made this recipe, and 2 would say it hit the spot. From preparation to the plate, this recipe takes approximately 45 minutes. A mixture of orange juice, extra virgin olive oil, lambs lettuce, and a handful of other ingredients are all it takes to make this recipe so delicious. It is brought to you by Foodista. Overall, this recipe earns a not so outstanding spoonacular score of 38%. Try Lettuce Salad With Bacon Dressing, Bacon Swiss Lettuce Salad, and Wilted Lettuce Salad with Bacon Dressing for similar recipes. </p>
-        </div>
-        <div class="ingredients-badges">
-            <h4 class="special-font mb-3">Ingredients</h4>
-            <span class="badge badge-primary">ice</span>
-            <span class="badge badge-primary">corn stratch</span>
-            <span class="badge badge-primary">cream</span>
-            <span class="badge badge-primary">salt</span>
+  </div>
+  <div class="col-12 col-lg-5">
+    <div class="recipe-details">
+      <h2 class="special-font">
+        {{ recipe.title }}
+      </h2>
+      <h6 class="dark-bale-color">
+        <span class="primary-color">$20.02</span> &#47; per serving
+      </h6>
+      <p class="recipe-details-content dark-bale-color">
+        {{ recipe.summary }}
+      </p>
+    </div>
+    <div class="ingredients-badges">
+      <h4 class="special-font mb-3">Ingredients</h4>
 
-        </div>
-
+      <span
+        class="badge badge-primary"
+        *ngFor="let ingredient of recipe.extendedIngredients"
+      >
+        {{ ingredient.name }}
+      </span>
     </div>
-    <div class="col-12">
-        <h4 class="special-font mb-3">Instructions</h4>
-            <p class="recipe-details-content dark-bale-color">SafeValue must use [property]=binding: Lamb’s Lettuce & Crispy Bacon Salad is a gluten free, dairy free, paleolithic, and primal hor d'oeuvre. This recipe serves 2. For $3.07 per serving, this recipe covers 11% of your daily requirements of vitamins and minerals. One serving contains 334 calories, 7g of protein, and 32g of fat. Not a lot of people made this recipe, and 2 would say it hit the spot. From preparation to the plate, this recipe takes approximately 45 minutes. A mixture of orange juice, extra virgin olive oil, lambs lettuce, and a handful of other ingredients are all it takes to make this recipe so delicious. It is brought to you by Foodista. Overall, this recipe earns a not so outstanding spoonacular score of 38%. Try Lettuce Salad With Bacon Dressing, Bacon Swiss Lettuce Salad, and Wilted Lettuce Salad with Bacon Dressing for similar recipes. </p>
-    </div>
+  </div>
+  <div class="col-12">
+    <h4 class="special-font mb-3">Instructions</h4>
+    <ol>
+      <ng-container *ngFor="let instructions of recipe.analyzedInstructions">
+        <li
+          class="recipe-details-content dark-bale-color"
+          *ngFor="let instruction of instructions.steps"
+        >
+          {{ instruction.step }}
+        </li>
+      </ng-container>
+    </ol>
+    <p class="recipe-details-content dark-bale-color">
+      {{ recipe.instructions }}
+    </p>
+  </div>
 </div>

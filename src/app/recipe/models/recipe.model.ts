@@ -15,7 +15,7 @@ export interface Recipe {
   healthScore: number;
   spoonacularScore: number;
   pricePerServing: number;
-  analyzedInstructions?: Array<object>;
+  analyzedInstructions?: Instruction[];
   cheap: boolean;
   creditsText: string;
   cuisines?: Array<string>;
@@ -40,4 +40,15 @@ export interface Recipe {
   preparationMinutes: number;
   cookingMinutes: number;
   originalId?: any;
+}
+
+export interface Instruction {
+  name: string;
+  steps: Array<{
+    number: number;
+    step: string;
+    ingredients?: Array<object>;
+    equipment?: Array<object>;
+    length?: object;
+  }>;
 }

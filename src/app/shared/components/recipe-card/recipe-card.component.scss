@@ -2,6 +2,7 @@
 .card {
   position: relative;
   border-color: $primary-color;
+
   & .card-img-top {
     height: 10rem;
     width: 100%;
@@ -18,6 +19,8 @@
     & .card-title {
       color: $primary-color;
       font-weight: 700;
+      height: 2.5rem;
+      display: block;
     }
 
     & .card-text {
@@ -25,4 +28,3 @@
     }
   }
 }
-

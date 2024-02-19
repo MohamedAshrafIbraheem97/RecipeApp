@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { BehaviorSubject, Observable, of, tap } from 'rxjs';
 import { Recipe } from '../models/recipe.model';
 import { HttpClient } from '@angular/common/http';
 import { EndpointsConstants } from 'src/app/core/config/endpoints-constants';
@@ -19,7 +19,14 @@ export class RecipeService {
     return of(this.recipes);
   }
 
-  getRecipeDetailsById(recipeId: string) {}
+  getRecipeDetailsById(recipeId: number) {
+    // const url =
+    //   EndpointsConstants.API_ENDPOINT +
+    //   URLS.recipes.recipeById.replace(':id', recipeId);
+
+    // return this.httpClient.get<Recipe[]>(url);
+    return of(this.recipes.find((recipe) => recipe.id === recipeId));
+  }
 
   searchRecipe(query: string) {}
   extendedIngredients: Ingredient[] = [

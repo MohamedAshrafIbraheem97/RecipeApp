@@ -5,11 +5,14 @@
     <!-- <i class="fa fa-heart" aria-hidden="true"></i> -->
   </div>
   <div class="card-body">
-    <h5 class="card-title text-capitalize">
+    <a
+      class="card-title text-capitalize h5 text-decoration-none"
+      [routerLink]="[recipe.id]"
+    >
       {{ recipe.title }}
-    </h5>
+    </a>
     <p class="card-text">
-      {{ recipe.summary }}
+      {{ recipe.summary | slice : 0 : 150 }}
     </p>
   </div>
   <div class="break-line"></div>

@@ -1,22 +1,23 @@
 @import "/src/styles/colors";
 
-.image-box{
-    & .food-image{
-        height: 30rem;
-        width: 100%;
-        object-fit: cover;
-    }
+.image-box {
+  & .food-image {
+    height: 30rem;
+    width: 100%;
+    object-fit: cover;
+  }
 }
 .recipe-details {
-    & .recipe-details-content{
-        color: $dark-bale-color;
-    }
+  & .recipe-details-content {
+    color: $dark-bale-color;
+  }
 }
 
-.ingredients-badges{
-    .badge{
-        background-color: $primary-color;
-        margin-inline-end: .25rem;
-        font-size: 1rem;
-    }
+.ingredients-badges {
+  .badge {
+    background-color: $primary-color;
+    margin-inline-end: 0.25rem;
+    margin-block-end: 0.25rem;
+    font-size: 1rem;
+  }
 }

@@ -20,7 +20,7 @@ export class RecipeCardComponent {
     this.sanitizedSummary = this.sanitizer.bypassSecurityTrustHtml(
       this.recipe.summary
     );
-    this.elementRef.nativeElement.querySelector('.card-text').innerHTML =
-      this.sanitizedSummary.toString();
+    // this.elementRef.nativeElement.querySelector('.card-text').innerHTML =
+    //   this.sanitizedSummary.toString();
   }
 }
