@@ -1,6 +1,6 @@
 <div class="row g-3">
-  <!-- a loop will go here -->
-  <div class="col-12 col-md-6 col-lg-4 col-xl-3">
-    <app-recipe-card></app-recipe-card>
+  <!-- loop over recipes list -->
+  <div class="col-12 col-md-6 col-lg-4 col-xl-3" *ngFor="let recipe of recipes">
+    <app-recipe-card [recipe]="recipe"></app-recipe-card>
   </div>
 </div>
