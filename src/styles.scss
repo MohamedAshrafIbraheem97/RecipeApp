@@ -1,11 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Dekko&display=swap");
 @import "/src/styles/colors.scss";
 
-.pacifico-regular {
-  font-style: normal;
+// general behaviors
+body {
+  font-family: "Dekko", cursive;
 }
 
-/* You can add global styles to this file, and also import other style files */
+// shared classes
 .logo-box {
   width: 100px;
 }
@@ -21,7 +22,27 @@
   -moz-box-shadow: 0px 0px 16px 0px $shadow-color;
   box-shadow: 0px 0px 16px 0px $shadow-color;
 }
+.favorite-icon {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  border-radius: 50%;
+  height: 2.5rem;
+  width: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.4rem;
+  color: $dark-bale-color;
+  background-color: $light-color;
+  cursor: pointer;
 
-body {
-  font-family: "Dekko", cursive;
+  & .fa-heart {
+    color: $primary-color;
+  }
 }
+
+.dark-bale-color {
+  color: $dark-bale-color;
+}
+
