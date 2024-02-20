@@ -24,7 +24,7 @@ This project is a dynamic web application built using Angular, aimed at validati
 ![GitHub](https://img.shields.io/badge/-GitHub-181717?style=flat-square&logo=github)
 ![Sass](https://img.shields.io/badge/-Sass-CC6699?style=flat-square&logo=sass&logoColor=white)
 ![Vercel](https://img.shields.io/badge/-Vercel-000000?style=flat-square&logo=vercel)
-
+![Spoonacular](https://img.shields.io/badge/-Spoonacular-FF7F50?style=flat-square&logo=spoonacular&logoColor=white)
 
 - **Angular:** Frontend framework for building robust and scalable web applications
 - **TypeScript:** The primary language used in Angular development
@@ -32,6 +32,7 @@ This project is a dynamic web application built using Angular, aimed at validati
 - **Bootstrap:** For responsive and mobile-first design
 - **Vercel:** For deployment
 - **Git/Github:** For source control
+- **Spoonacular:** For API
 
 ## Getting Started
 To get up and running with this Angular project, follow these simple steps:
