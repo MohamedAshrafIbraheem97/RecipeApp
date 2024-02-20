@@ -16,14 +16,15 @@ This project is a dynamic web application built using Angular, aimed at validati
 - **Feature 8:** it's also supports all kind of screens (responsive design)
 
 ## Technologies Used
-- **Angular:** <i class="fab fa-angular"></i> Angular Frontend framework for building robust and scalable web applications
-- **HTML/CSS:** <i class="fab fa-html5"></i> <i class="fab fa-css3-alt"></i> For structuring and styling the application
-- **SCSS:** <i class="fab fa-sass"></i> For advanced CSS preprocessing
-- **Bootstrap:** <i class="fab fa-bootstrap"></i> For responsive and mobile-first design
-- **Font Awesome:** <i class="fab fa-font-awesome"></i> For beautiful and customizable icons
-- **TypeScript:** <i class="fab fa-js-square"></i> TypeScript The primary language used in Angular development
-- **Vercel:** <i class="fab fa-vercel"></i> Deployed on Vercel for seamless and scalable hosting
-- **Spoonacular:** <i class="fas fa-utensils"></i> Utilizing Spoonacular API for recipe data and food-related information
+- **Angular:** ![Angular Logo](https://angular.io/assets/images/logos/angular/angular.svg) Frontend framework for building robust and scalable web applications
+- **HTML/CSS:** ![HTML5 Logo](https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg) ![CSS3 Logo](https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg) For structuring and styling the application
+- **SCSS:** ![Sass Logo](https://sass-lang.com/assets/img/logos/logo-b6e1ef6e.svg) For advanced CSS preprocessing
+- **Bootstrap:** ![Bootstrap Logo](https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Bootstrap_logo.svg/1200px-Bootstrap_logo.svg.png) For responsive and mobile-first design
+- **Font Awesome:** ![Font Awesome Logo](https://fontawesome.com/images/open-graph.png) For beautiful and customizable icons
+- **TypeScript:** ![TypeScript Logo](https://upload.wikimedia.org/wikipedia/commons/4/4c/Typescript_logo_2022.svg) TypeScript The primary language used in Angular development
+- **Spoonacular:** ![Spoonacular Logo](https://spoonacular.com/images/spoonacular-logo-b.svg) Utilizing Spoonacular API for recipe data and food-related information
+- **Vercel:** ![Vercel Logo](https://assets.vercel.com/image/upload/front/assets/design/vercel-triangle-black.svg) Deployed on Vercel for seamless and scalable hosting
+
 
 
 - **Angular:** Frontend framework for building robust and scalable web applications
