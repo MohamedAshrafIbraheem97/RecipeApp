@@ -34,6 +34,18 @@ This project is a dynamic web application built using Angular, aimed at validati
 - **Git/Github:** For source control
 - **Spoonacular:** For API
 
+## Used Folder Structure
+1. core: contains endpoints configrations and interceptors
+2. recipe: contains components, models and service
+3. favorite-recipe: contains a component for listing all favorite recipes
+4. shared: contains shared components like recipe card.
+
+## why this structure
+1. I belive in lazy loading so i tried to make the minimal modules i can
+2. I used local storage to store favorite recipes this is why i tried to put the methods on the recipe service so all related data on one single file and to change on one single place when adding firestore
+3. Bootstrap for easier design and pre-made components
+4. I used end-points constants file so we might want to add more links for mockup server for example
+
 ## Getting Started
 To get up and running with this Angular project, follow these simple steps:
 
