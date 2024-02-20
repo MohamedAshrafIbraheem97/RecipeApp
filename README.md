@@ -1,4 +1,4 @@
-# Welcome to Recipe App! [Working Demo](https://recipe-app-five-lime.vercel.app/favorite-recipes)
+# Welcome to Recipe App! [Working Demo](https://recipe-app-five-lime.vercel.app/recipes)
 
 Hey there! Thanks for checking out my Angular project. Below, you'll find all the essential information to get started with the project.
 
@@ -16,7 +16,7 @@ This project is a dynamic web application built using Angular, aimed at validati
 - **Feature 8:** it's also supports all kind of screens (responsive design)
 
 ## Technologies Used
-<img src="https://angular.io/assets/images/logos/angular/angular.svg" alt="Angular Logo" width="100" height="100"> <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg" alt="HTML5 Logo" width="100" height="100"> <img src="https://sass-lang.com/assets/img/logos/logo-b6e1ef6e.svg" alt="Sass Logo" width="100" height="100"> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Bootstrap_logo.svg/1200px-Bootstrap_logo.svg.png" alt="Bootstrap Logo" width="100" height="100"> <img src="https://fontawesome.com/images/open-graph.png" alt="Font Awesome Logo" width="100" height="100"> <img src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Typescript_logo_2022.svg" alt="TypeScript Logo" width="100" height="100"> <img src="https://spoonacular.com/images/spoonacular-logo-b.svg" alt="Spoonacular Logo" width="100" height="100"> <img src="https://www.vercel.com/logos/vercel.svg" alt="Vercel Logo" width="100" height="100">
+<img src="https://angular.io/assets/images/logos/angular/angular.svg" alt="Angular Logo" width="100" height="100"> <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg" alt="HTML5 Logo" width="100" height="100"> <img src="https://sass-lang.com/assets/img/logos/logo-b6e1ef6e.svg" alt="Sass Logo" width="100" height="100"> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Bootstrap_logo.svg/1200px-Bootstrap_logo.svg.png" alt="Bootstrap Logo" width="100" height="100"> <img src="https://fontawesome.com/images/open-graph.png" alt="Font Awesome Logo" width="100" height="100"> <img src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Typescript_logo_2022.svg" alt="TypeScript Logo" width="100" height="100"> <img src="https://www.sasscss.com/img/logos/logo-b6e1ef6e.svg" alt="Sass Logo" width="100" height="100"> <img src="https://spoonacular.com/images/spoonacular-logo-b.svg" alt="Spoonacular Logo" width="100" height="100"> <img src="https://www.vercel.com/logos/vercel.svg" alt="Vercel Logo" width="100" height="100"> <img src="https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png" alt="Git Logo" width="100" height="100"> <img src="https://image.flaticon.com/icons/png/512/25/25231.png" alt="GitHub Logo" width="100" height="100">
 
 
 
