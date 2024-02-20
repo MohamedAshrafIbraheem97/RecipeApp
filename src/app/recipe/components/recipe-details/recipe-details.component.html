@@ -24,9 +24,11 @@
         <span class="primary-color"> &#36; {{ recipe.pricePerServing }} </span>
         &#47; per serving
       </h6>
-      <p class="recipe-details-content dark-bale-color">
-        {{ recipe.summary }}
-      </p>
+      <!-- inner html is to render the returned response as html so it doesn't show the tags -->
+      <p
+        class="recipe-details-content dark-bale-color"
+        [innerHTML]="recipe.summary"
+      ></p>
     </div>
     <div class="ingredients-badges">
       <h4 class="special-font mb-3">Ingredients</h4>
@@ -41,18 +43,10 @@
   </div>
   <div class="col-12">
     <h4 class="special-font mb-3">Instructions</h4>
-    <ol>
-      <ng-container *ngFor="let instructions of recipe.analyzedInstructions">
-        <li
-          class="recipe-details-content dark-bale-color"
-          *ngFor="let instruction of instructions.steps"
-        >
-          {{ instruction.step }}
-        </li>
-      </ng-container>
-    </ol>
-    <p class="recipe-details-content dark-bale-color">
-      {{ recipe.instructions }}
-    </p>
+    <!-- inner html is to render the returned response as html so it doesn't show the tags -->
+    <p
+      class="recipe-details-content dark-bale-color"
+      [innerHTML]="recipe.instructions"
+    ></p>
   </div>
 </div>

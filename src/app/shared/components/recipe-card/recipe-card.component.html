@@ -12,11 +12,10 @@
       class="card-title text-capitalize h5 text-decoration-none"
       [routerLink]="['/recipes', recipe.id]"
     >
-      {{ recipe.title }}
+      {{ recipe.title | slice : 0 : 40 }}
     </a>
-    <p class="card-text">
-      {{ recipe.summary | slice : 0 : 150 }}
-    </p>
+    <!-- inner html is to render the returned response as html so it doesn't show the tags -->
+    <p class="card-text" [innerHTML]="recipe.summary | slice : 0 : 150"></p>
   </div>
   <div class="break-line"></div>
   <div class="card-body d-flex primary-color">

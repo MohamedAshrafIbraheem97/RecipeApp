@@ -10,13 +10,12 @@ import { Recipe } from '../../models/recipe.model';
 export class RecipeListComponent implements OnInit {
   recipes: Recipe[] = [];
 
-  /**
-   * inject services
-   */
   constructor(private recipeService: RecipeService) {}
   ngOnInit(): void {
     this.recipeService.getRandomRecipes().subscribe((recipes) => {
-      if (recipes.length > 1) this.recipes = recipes;
+      console.log(recipes);
+
+      this.recipes = recipes;
     });
   }
 }

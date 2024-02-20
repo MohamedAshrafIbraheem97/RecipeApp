@@ -1,6 +1,4 @@
 import { Component, ElementRef, Input } from '@angular/core';
-import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
-import { Observable } from 'rxjs';
 import { Recipe } from 'src/app/recipe/models/recipe.model';
 import { RecipeService } from 'src/app/recipe/service/recipe.service';
 
@@ -13,22 +11,10 @@ export class RecipeCardComponent {
   @Input() recipe!: Recipe;
   isFavorite!: boolean;
 
-  sanitizedSummary!: SafeHtml;
-
-  constructor(
-    private sanitizer: DomSanitizer,
-    private elementRef: ElementRef,
-    private recipeService: RecipeService
-  ) {}
+  constructor(private recipeService: RecipeService) {}
 
   ngOnInit(): void {
     this.checkIfFavorite(this.recipe);
-
-    this.sanitizedSummary = this.sanitizer.bypassSecurityTrustHtml(
-      this.recipe.summary
-    );
-    // this.elementRef.nativeElement.querySelector('.card-text').innerHTML =
-    //   this.sanitizedSummary.toString();
   }
 
   addToFavorites(recipe: Recipe): void {
