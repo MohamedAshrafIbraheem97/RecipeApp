@@ -6,17 +6,10 @@ import { AppComponent } from './app.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AuthHeadersInterceptor } from './core/interceptors/auth-headers.interceptor';
 import { SharedModule } from './shared/shared.module';
-import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    SharedModule,
-    InfiniteScrollModule,
-  ],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, SharedModule],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,

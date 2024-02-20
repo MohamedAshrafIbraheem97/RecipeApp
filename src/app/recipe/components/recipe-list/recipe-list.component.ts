@@ -9,16 +9,23 @@ import { Recipe } from '../../models/recipe.model';
 })
 export class RecipeListComponent implements OnInit {
   recipes: Recipe[] = [];
+  private _pageNumber = 1;
 
   constructor(private recipeService: RecipeService) {}
   ngOnInit(): void {
-    this.fetchRecipes();
+    this.fetchRecipes(this._pageNumber);
   }
 
   // fetch random recipes from the backend
-  private fetchRecipes() {
-    this.recipeService.getRandomRecipes().subscribe((recipes) => {
-      this.recipes = recipes;
+  private fetchRecipes(pageNumber: number) {
+    this.recipeService.getRandomRecipes(pageNumber).subscribe((newRecipes) => {
+      this.recipes = this.recipes.concat(newRecipes);
     });
+  }
+
+  // is triggered when scrolling
+  onScroll() {
+    this._pageNumber++;
+    this.fetchRecipes(this._pageNumber);
   }
 }

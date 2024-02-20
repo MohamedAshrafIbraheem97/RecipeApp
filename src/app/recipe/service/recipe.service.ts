@@ -18,9 +18,13 @@ export class RecipeService {
 
   constructor(private httpClient: HttpClient) {}
 
-  getRandomRecipes(): Observable<Recipe[]> {
+  getRandomRecipes(pageNumber: number = 1): Observable<Recipe[]> {
+    const pageSize: number = 15;
+    const offset = (pageNumber - 1) * pageSize;
     return this.httpClient
-      .get<any>(EndpointsConstants.API_ENDPOINT + URLS.recipes.randomRecipes)
+      .get<any>(
+        `${EndpointsConstants.API_ENDPOINT}${URLS.recipes.randomRecipes}${pageSize}&offset=${offset}`
+      )
       .pipe(
         map((res) => {
           return res.recipes;
