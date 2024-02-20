@@ -1,4 +1,4 @@
-# Welcome to Recipe App! [Working Demo](https://recipe-app-five-lime.vercel.app/favorite-recipes)
+# Welcome to Recipe App! [Working Demo](https://recipe-app-five-lime.vercel.app/recipes)
 
 Hey there! Thanks for checking out my Angular project. Below, you'll find all the essential information to get started with the project.
 
@@ -16,15 +16,23 @@ This project is a dynamic web application built using Angular, aimed at validati
 - **Feature 8:** it's also supports all kind of screens (responsive design)
 
 ## Technologies Used
-<img src="https://angular.io/assets/images/logos/angular/angular.svg" alt="Angular Logo" width="100" height="100"> <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg" alt="HTML5 Logo" width="100" height="100"> <img src="https://sass-lang.com/assets/img/logos/logo-b6e1ef6e.svg" alt="Sass Logo" width="100" height="100"> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Bootstrap_logo.svg/1200px-Bootstrap_logo.svg.png" alt="Bootstrap Logo" width="100" height="100"> <img src="https://fontawesome.com/images/open-graph.png" alt="Font Awesome Logo" width="100" height="100"> <img src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Typescript_logo_2022.svg" alt="TypeScript Logo" width="100" height="100"> <img src="https://spoonacular.com/images/spoonacular-logo-b.svg" alt="Spoonacular Logo" width="100" height="100"> <img src="https://www.vercel.com/logos/vercel.svg" alt="Vercel Logo" width="100" height="100">
-
-
+![Angular](https://img.shields.io/badge/-Angular-red?style=flat-square&logo=angular)
+![TypeScript](https://img.shields.io/badge/-TypeScript-black?style=flat-square&logo=typescript)
+![HTML5](https://img.shields.io/badge/-HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
+![Bootstrap](https://img.shields.io/badge/-Bootstrap-563D7C?style=flat-square&logo=bootstrap)
+![Git](https://img.shields.io/badge/-Git-black?style=flat-square&logo=git)
+![GitHub](https://img.shields.io/badge/-GitHub-181717?style=flat-square&logo=github)
+![Sass](https://img.shields.io/badge/-Sass-CC6699?style=flat-square&logo=sass&logoColor=white)
+![Vercel](https://img.shields.io/badge/-Vercel-000000?style=flat-square&logo=vercel)
+![Spoonacular](https://img.shields.io/badge/-Spoonacular-FF7F50?style=flat-square&logo=spoonacular&logoColor=white)
 
 - **Angular:** Frontend framework for building robust and scalable web applications
 - **TypeScript:** The primary language used in Angular development
 - **HTML/SCSS:** For structuring and styling the application
 - **Bootstrap:** For responsive and mobile-first design
 - **Vercel:** For deployment
+- **Git/Github:** For source control
+- **Spoonacular:** For API
 
 ## Getting Started
 To get up and running with this Angular project, follow these simple steps:
