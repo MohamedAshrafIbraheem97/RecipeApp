@@ -16,14 +16,8 @@ This project is a dynamic web application built using Angular, aimed at validati
 - **Feature 8:** it's also supports all kind of screens (responsive design)
 
 ## Technologies Used
-- **Angular:** ![Angular Logo](https://angular.io/assets/images/logos/angular/angular.svg) Frontend framework for building robust and scalable web applications
-- **HTML/CSS:** ![HTML5 Logo](https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg) ![CSS3 Logo](https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg) For structuring and styling the application
-- **SCSS:** ![Sass Logo](https://sass-lang.com/assets/img/logos/logo-b6e1ef6e.svg) For advanced CSS preprocessing
-- **Bootstrap:** ![Bootstrap Logo](https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Bootstrap_logo.svg/1200px-Bootstrap_logo.svg.png) For responsive and mobile-first design
-- **Font Awesome:** ![Font Awesome Logo](https://fontawesome.com/images/open-graph.png) For beautiful and customizable icons
-- **TypeScript:** ![TypeScript Logo](https://upload.wikimedia.org/wikipedia/commons/4/4c/Typescript_logo_2022.svg) TypeScript The primary language used in Angular development
-- **Spoonacular:** ![Spoonacular Logo](https://spoonacular.com/images/spoonacular-logo-b.svg) Utilizing Spoonacular API for recipe data and food-related information
-- **Vercel:** ![Vercel Logo](https://assets.vercel.com/image/upload/front/assets/design/vercel-triangle-black.svg) Deployed on Vercel for seamless and scalable hosting
+- **Angular:** <img src="https://angular.io/assets/images/logos/angular/angular.svg" alt="Angular Logo" width="100" height="100"> **HTML/CSS:** <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg" alt="HTML5 Logo" width="100" height="100"> <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg" alt="CSS3 Logo" width="100" height="100"> **SCSS:** <img src="https://sass-lang.com/assets/img/logos/logo-b6e1ef6e.svg" alt="Sass Logo" width="100" height="100"> **Bootstrap:** <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Bootstrap_logo.svg/1200px-Bootstrap_logo.svg.png" alt="Bootstrap Logo" width="100" height="100"> **Font Awesome:** <img src="https://fontawesome.com/images/open-graph.png" alt="Font Awesome Logo" width="100" height="100"> **TypeScript:** <img src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Typescript_logo_2022.svg" alt="TypeScript Logo" width="100" height="100">
+- **Spoonacular:** <img src="https://spoonacular.com/images/spoonacular-logo-b.svg" alt="Spoonacular Logo" width="100" height="100"> **Vercel:** <img src="https://assets.vercel.com/image/upload/front/assets/design/vercel-triangle-black.svg" alt="Vercel Logo" width="100" height="100">
 
 
 
