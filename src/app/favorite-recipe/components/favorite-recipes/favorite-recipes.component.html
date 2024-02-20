@@ -1,1 +1,6 @@
-<p>favorite-recipes works!</p>
+<div class="row g-3">
+  <!-- loop over recipes list -->
+  <div class="col-12 col-md-6 col-lg-4 col-xl-3" *ngFor="let recipe of recipes">
+    <app-recipe-card [recipe]="recipe"></app-recipe-card>
+  </div>
+</div>

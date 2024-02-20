@@ -5,16 +5,17 @@ nav {
     color: $primary-color;
     position: relative;
   }
-
-  & .active-link::after {
-    content: "";
-    position: absolute;
-    bottom: -5px;
-    left: 50%;
-    width: 50%;
-    height: 5px;
-    transform: translate(-50%);
-    background-color: $primary-color;
-    border-radius: 30px;
+  @media screen and (min-width: 992px) {
+    & .active-link::after {
+      content: "";
+      position: absolute;
+      bottom: -5px;
+      left: 50%;
+      width: 50%;
+      height: 5px;
+      transform: translate(-50%);
+      background-color: $primary-color;
+      border-radius: 30px;
+    }
   }
 }

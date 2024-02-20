@@ -5,6 +5,7 @@ import { SearchComponent } from './components/search/search.component';
 import { RecipeCardComponent } from './components/recipe-card/recipe-card.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,7 @@ import { RouterModule } from '@angular/router';
     RecipeCardComponent,
     NotFoundComponent,
   ],
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, FormsModule],
   exports: [NavBarComponent, SearchComponent, RecipeCardComponent],
 })
 export class SharedModule {}

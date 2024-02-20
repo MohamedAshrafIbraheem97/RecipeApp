@@ -1,13 +1,16 @@
 <div class="card">
   <img [src]="recipe.image" class="card-img-top" [alt]="recipe.title" />
-  <div class="favorite-icon shadow-effect">
-    <i class="fa fa-heart-o" aria-hidden="true"></i>
-    <!-- <i class="fa fa-heart" aria-hidden="true"></i> -->
+  <div class="favorite-icon shadow-effect" (click)="addToFavorites(recipe)">
+    <i
+      class="fa"
+      [ngClass]="isFavorite ? 'fa-heart' : 'fa-heart-o'"
+      aria-hidden="true"
+    ></i>
   </div>
   <div class="card-body">
     <a
       class="card-title text-capitalize h5 text-decoration-none"
-      [routerLink]="[recipe.id]"
+      [routerLink]="['/recipes', recipe.id]"
     >
       {{ recipe.title }}
     </a>

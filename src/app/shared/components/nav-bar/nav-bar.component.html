@@ -1,5 +1,7 @@
-<nav class="navbar navbar-expand-lg justify-content-around">
-  <div class="d-flex w-100 container">
+<nav
+  class="navbar navbar-expand-lg navbar-light bg-light justify-content-between"
+>
+  <div class="container-fluid">
     <a class="navbar-brand" routerLink="/recipes">
       <img src="assets/images/logo.svg" alt="logo" class="logo-box" />
     </a>
@@ -14,9 +16,11 @@
     >
       <span class="navbar-toggler-icon"></span>
     </button>
-
     <div
-      class="collapse navbar-collapse w-50 flex-grow-0 justify-content-between"
+      class="collapse navbar-collapse"
+      [ngClass]="
+        showSearchBar ? 'justify-content-center' : 'justify-content-end'
+      "
       id="navbarSupportedContent"
     >
       <ul class="navbar-nav mb-2 mb-lg-0">
@@ -33,13 +37,14 @@
             class="nav-link special-font"
             routerLink="/favorite-recipes"
             routerLinkActive="active-link"
+            >Favorites</a
           >
-            Favorites
-          </a>
+        </li>
+        <li class="nav-item d-lg-none">
+          <app-search *ngIf="showSearchBar"></app-search>
         </li>
       </ul>
-
-      <app-search *ngIf="showSearchBar"></app-search>
     </div>
+    <app-search class="d-none d-lg-block" *ngIf="showSearchBar"></app-search>
   </div>
 </nav>

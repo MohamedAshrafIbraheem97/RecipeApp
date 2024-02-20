@@ -1,15 +1,22 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, of, tap } from 'rxjs';
+import { BehaviorSubject, Observable, map, of, tap } from 'rxjs';
 import { Recipe } from '../models/recipe.model';
 import { HttpClient } from '@angular/common/http';
 import { EndpointsConstants } from 'src/app/core/config/endpoints-constants';
 import { URLS } from 'src/app/core/config/api-urls';
 import { Ingredient } from '../models/ingredient.model';
+import { SearchResult } from '../models/searchResult.model';
 
 @Injectable({
   providedIn: 'root',
 })
 export class RecipeService {
+  private _favoriteRecipesSubject: BehaviorSubject<Recipe[]> =
+    new BehaviorSubject<Recipe[]>([]);
+  favoriteRecipes$: Observable<Recipe[]> =
+    this._favoriteRecipesSubject.asObservable();
+
+  // private _favoriteRecipes: Recipe[] = [];
   constructor(private httpClient: HttpClient) {}
 
   getRandomRecipes(): Observable<Recipe[]> {
@@ -22,13 +29,91 @@ export class RecipeService {
   getRecipeDetailsById(recipeId: number) {
     // const url =
     //   EndpointsConstants.API_ENDPOINT +
-    //   URLS.recipes.recipeById.replace(':id', recipeId);
+    //   URLS.recipes.recipeById.replace(':id', String(recipeId));
 
-    // return this.httpClient.get<Recipe[]>(url);
+    // return this.httpClient.get<Recipe>(url);
     return of(this.recipes.find((recipe) => recipe.id === recipeId));
   }
 
-  searchRecipe(query: string) {}
+  searchRecipe(query: string) {
+    const url =
+      EndpointsConstants.API_ENDPOINT +
+      URLS.recipes.search.replace('searchQuery', query);
+
+    return this.httpClient.get<SearchResult>(url);
+  }
+
+  getFavoriteRecipes(): Observable<Recipe[]> {
+    this.loadFavoriteRecipes();
+    return this.favoriteRecipes$;
+  }
+
+  toggleFavorite(recipe: Recipe): void {
+    const currentFavorites = this._favoriteRecipesSubject.getValue();
+    const index = currentFavorites.findIndex(
+      (favRecipe) => favRecipe.id === recipe.id
+    );
+
+    if (index === -1) {
+      // Recipe does not exist in favorites, add it
+      this.addRecipeToFavorites(currentFavorites, recipe);
+    } else {
+      // Recipe exists in favorites, remove it
+      this.removeRecipeFromFavorites(currentFavorites, index);
+    }
+  }
+
+  addRecipeToFavorites(currentFavorites: Recipe[], recipe: Recipe): void {
+    const updatedFavorites = [...currentFavorites, recipe];
+    this._favoriteRecipesSubject.next(updatedFavorites);
+    this.saveFavoriteRecipes(updatedFavorites);
+  }
+
+  removeRecipeFromFavorites(
+    currentFavorites: Recipe[],
+    recipeIndex: number
+  ): void {
+    const updatedFavorites = [...currentFavorites];
+    updatedFavorites.splice(recipeIndex, 1);
+    this._favoriteRecipesSubject.next(updatedFavorites);
+    this.saveFavoriteRecipes(updatedFavorites);
+  }
+
+  private loadFavoriteRecipes(): void {
+    const savedRecipes = localStorage.getItem('favoriteRecipes');
+    if (savedRecipes) {
+      const parsedRecipes: Recipe[] = JSON.parse(savedRecipes);
+      this._favoriteRecipesSubject.next(parsedRecipes);
+    }
+  }
+
+  private saveFavoriteRecipes(favoriteRecipes: Recipe[]): void {
+    localStorage.setItem('favoriteRecipes', JSON.stringify(favoriteRecipes));
+  }
+  isFavorite(recipe: Recipe): Observable<boolean> {
+    this.loadFavoriteRecipes();
+
+    return this.favoriteRecipes$.pipe(
+      map((favoriteRecipes) => {
+        return favoriteRecipes.some((favRecipe) => favRecipe.id === recipe.id);
+      })
+    );
+  }
+
+  searcheee: SearchResult = {
+    results: [
+      {
+        id: 496871,
+        title: 'Easy 1 Hour Homemade Hamburger Buns',
+        image: 'https://spoonacular.com/recipeImages/496871-312x231.jpg',
+      },
+      {
+        id: 507470,
+        title: 'Hamburger Buns',
+        image: 'https://spoonacular.com/recipeImages/507470-312x231.jpg',
+      },
+    ],
+  };
   extendedIngredients: Ingredient[] = [
     {
       id: 4073,
@@ -1451,7 +1536,7 @@ export class RecipeService {
       ],
       occasions: [],
       instructions:
-        '<ol><li>Cook onion, bell pepper, garlic, cumin seeds and salt in oil in a deep pot over moderate heat, stirring occasionally, until vegetables are softened, 7 to 9 mins. Stir in Wine and bring to boil.</li><li>Add clams and chorizo, then boil, covered until clams open, 7-8 mins. (Discard any clams that are not open)</li><li>Season with pepper and stir in cilantro.</li><li>Serve these clams with some crusty bread for sopping up the sauce.</li></ol>',
+        '<ol><li>Cook onion, bell pepper, garlic, cumin seeds and salt in oil in a deep pot over moderate heat, stirring occasionally, until vegetables are softened, 7 to 9 mins. Stir in Wine and bring to boil.</li><li>Add clams and chorizo, then boil, covered until clams open, 7-8 mins. (Discard Recipe clams that are not open)</li><li>Season with pepper and stir in cilantro.</li><li>Serve these clams with some crusty bread for sopping up the sauce.</li></ol>',
       analyzedInstructions: [
         {
           name: '',
@@ -1524,7 +1609,7 @@ export class RecipeService {
             },
             {
               number: 2,
-              step: 'Add clams and chorizo, then boil, covered until clams open, 7-8 mins. (Discard any clams that are not open)Season with pepper and stir in cilantro.',
+              step: 'Add clams and chorizo, then boil, covered until clams open, 7-8 mins. (Discard Recipe clams that are not open)Season with pepper and stir in cilantro.',
               ingredients: [
                 {
                   id: 11165,

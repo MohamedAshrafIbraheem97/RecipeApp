@@ -40,6 +40,7 @@ export interface Recipe {
   preparationMinutes: number;
   cookingMinutes: number;
   originalId?: any;
+  isFavorite?: boolean;
 }
 
 export interface Instruction {

@@ -10,6 +10,8 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class RecipeDetailsComponent implements OnInit {
   recipe!: Recipe;
+  isFavorite!: boolean;
+
   constructor(
     private recipeService: RecipeService,
     private route: ActivatedRoute
@@ -23,12 +25,19 @@ export class RecipeDetailsComponent implements OnInit {
 
   fetchRecipeData(recipeId: number) {
     this.recipeService.getRecipeDetailsById(recipeId).subscribe((res) => {
-      if (res) this.recipe = res;
-      console.log(
-        res?.analyzedInstructions?.forEach((item) => console.log(item))
-      );
+      if (res) {
+        this.recipe = res;
+        this.checkIfFavorite(this.recipe);
+      }
     });
   }
-  isFavorite: boolean = false;
-  addToFavorites() {}
+  addToFavorites(recipe: Recipe): void {
+    this.recipeService.toggleFavorite(recipe);
+  }
+
+  checkIfFavorite(recipe: Recipe): void {
+    this.recipeService.isFavorite(recipe).subscribe((isFav: boolean) => {
+      this.isFavorite = isFav;
+    });
+  }
 }
