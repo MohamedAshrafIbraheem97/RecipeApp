@@ -12,9 +12,12 @@ export class RecipeListComponent implements OnInit {
 
   constructor(private recipeService: RecipeService) {}
   ngOnInit(): void {
-    this.recipeService.getRandomRecipes().subscribe((recipes) => {
-      console.log(recipes);
+    this.fetchRecipes();
+  }
 
+  // fetch random recipes from the backend
+  private fetchRecipes() {
+    this.recipeService.getRandomRecipes().subscribe((recipes) => {
       this.recipes = recipes;
     });
   }

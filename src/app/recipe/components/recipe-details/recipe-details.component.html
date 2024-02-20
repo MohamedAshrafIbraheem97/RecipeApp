@@ -1,6 +1,12 @@
-<ng-container *ngIf="!recipe?.title"> No Data found </ng-container>
+<ng-template #loading>
+  <div class="d-flex justify-content-center">
+    <div class="spinner-border primary-color" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+</ng-template>
 
-<div class="row gy-5" *ngIf="recipe?.title">
+<div class="row gy-5" *ngIf="recipe?.title; else loading">
   <div class="col-12 col-lg-7">
     <div
       class="image-box rounded-5 overflow-hidden shadow-effect position-relative"

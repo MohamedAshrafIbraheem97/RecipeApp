@@ -1,6 +1,12 @@
-<ng-template #loading> fetching data... </ng-template>
+<ng-template #loading>
+  <div class="d-flex justify-content-center">
+    <div class="spinner-border primary-color" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+</ng-template>
 
-<div class="row g-3">
+<div class="row g-3" *ngIf="recipes.length > 0; else loading">
   <!-- loop over recipes list -->
   <div class="col-12 col-md-6 col-lg-4 col-xl-3" *ngFor="let recipe of recipes">
     <app-recipe-card [recipe]="recipe"></app-recipe-card>
