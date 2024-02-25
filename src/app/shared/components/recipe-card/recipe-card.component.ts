@@ -1,4 +1,5 @@
 import { Component, ElementRef, Input } from '@angular/core';
+import { FavoriteRecipeService } from 'src/app/favorite-recipe/services/favorite-recipe.service';
 import { Recipe } from 'src/app/recipe/models/recipe.model';
 import { RecipeService } from 'src/app/recipe/service/recipe.service';
 
@@ -11,19 +12,25 @@ export class RecipeCardComponent {
   @Input() recipe!: Recipe;
   isFavorite!: boolean;
 
-  constructor(private recipeService: RecipeService) {}
+  constructor(private favoriteRecipeService: FavoriteRecipeService) {}
 
   ngOnInit(): void {
     this.checkIfFavorite(this.recipe);
   }
 
   addToFavorites(recipe: Recipe): void {
-    this.recipeService.toggleFavorite(recipe);
+    this.favoriteRecipeService.toggleFavorite(recipe);
+
+    console.log('clicked', this.isFavorite);
   }
 
   checkIfFavorite(recipe: Recipe): void {
-    this.recipeService.isFavorite(recipe).subscribe((isFav: boolean) => {
-      this.isFavorite = isFav;
-    });
+    this.favoriteRecipeService
+      .isFavorite(recipe)
+      .subscribe((isFav: boolean) => {
+        console.log(isFav);
+
+        this.isFavorite = isFav;
+      });
   }
 }

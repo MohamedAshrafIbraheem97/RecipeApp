@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Recipe } from 'src/app/recipe/models/recipe.model';
 import { RecipeService } from 'src/app/recipe/service/recipe.service';
+import { FavoriteRecipeService } from '../../services/favorite-recipe.service';
 
 @Component({
   selector: 'app-favorite-recipes',
@@ -10,10 +11,10 @@ import { RecipeService } from 'src/app/recipe/service/recipe.service';
 export class FavoriteRecipesComponent implements OnInit {
   recipes: Recipe[] = [];
   ngOnInit(): void {
-    this.recipeService.getFavoriteRecipes().subscribe((recipes) => {
+    this.favoriteRecipeService.getFavoriteRecipes().subscribe((recipes) => {
       this.recipes = recipes;
     });
   }
 
-  constructor(private recipeService: RecipeService) {}
+  constructor(private favoriteRecipeService: FavoriteRecipeService) {}
 }

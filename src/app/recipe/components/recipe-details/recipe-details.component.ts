@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { RecipeService } from '../../service/recipe.service';
 import { Recipe } from '../../models/recipe.model';
 import { ActivatedRoute } from '@angular/router';
+import { FavoriteRecipeService } from 'src/app/favorite-recipe/services/favorite-recipe.service';
 
 @Component({
   selector: 'app-recipe-details',
@@ -14,6 +15,7 @@ export class RecipeDetailsComponent implements OnInit {
 
   constructor(
     private recipeService: RecipeService,
+    private favoriteRecipeService: FavoriteRecipeService,
     private route: ActivatedRoute
   ) {}
   ngOnInit(): void {
@@ -32,12 +34,14 @@ export class RecipeDetailsComponent implements OnInit {
     });
   }
   addToFavorites(recipe: Recipe): void {
-    this.recipeService.toggleFavorite(recipe);
+    this.favoriteRecipeService.toggleFavorite(recipe);
   }
 
   checkIfFavorite(recipe: Recipe): void {
-    this.recipeService.isFavorite(recipe).subscribe((isFav: boolean) => {
-      this.isFavorite = isFav;
-    });
+    this.favoriteRecipeService
+      .isFavorite(recipe)
+      .subscribe((isFav: boolean) => {
+        this.isFavorite = isFav;
+      });
   }
 }

@@ -49,60 +49,60 @@ export class RecipeService {
     return this.httpClient.get<SearchResult>(url);
   }
 
-  getFavoriteRecipes(): Observable<Recipe[]> {
-    this.loadFavoriteRecipes();
-    return this.favoriteRecipes$;
-  }
+  // getFavoriteRecipes(): Observable<Recipe[]> {
+  //   this.loadFavoriteRecipes();
+  //   return this.favoriteRecipes$;
+  // }
 
-  toggleFavorite(recipe: Recipe): void {
-    const currentFavorites = this._favoriteRecipesSubject.getValue();
-    const index = currentFavorites.findIndex(
-      (favRecipe) => favRecipe.id === recipe.id
-    );
+  // toggleFavorite(recipe: Recipe): void {
+  //   const currentFavorites = this._favoriteRecipesSubject.getValue();
+  //   const index = currentFavorites.findIndex(
+  //     (favRecipe) => favRecipe.id === recipe.id
+  //   );
 
-    if (index === -1) {
-      // Recipe does not exist in favorites, add it
-      this.addRecipeToFavorites(currentFavorites, recipe);
-    } else {
-      // Recipe exists in favorites, remove it
-      this.removeRecipeFromFavorites(currentFavorites, index);
-    }
-  }
+  //   if (index === -1) {
+  //     // Recipe does not exist in favorites, add it
+  //     this.addRecipeToFavorites(currentFavorites, recipe);
+  //   } else {
+  //     // Recipe exists in favorites, remove it
+  //     this.removeRecipeFromFavorites(currentFavorites, index);
+  //   }
+  // }
 
-  addRecipeToFavorites(currentFavorites: Recipe[], recipe: Recipe): void {
-    const updatedFavorites = [...currentFavorites, recipe];
-    this._favoriteRecipesSubject.next(updatedFavorites);
-    this.saveFavoriteRecipes(updatedFavorites);
-  }
+  // addRecipeToFavorites(currentFavorites: Recipe[], recipe: Recipe): void {
+  //   const updatedFavorites = [...currentFavorites, recipe];
+  //   this._favoriteRecipesSubject.next(updatedFavorites);
+  //   this.saveFavoriteRecipes(updatedFavorites);
+  // }
 
-  removeRecipeFromFavorites(
-    currentFavorites: Recipe[],
-    recipeIndex: number
-  ): void {
-    const updatedFavorites = [...currentFavorites];
-    updatedFavorites.splice(recipeIndex, 1);
-    this._favoriteRecipesSubject.next(updatedFavorites);
-    this.saveFavoriteRecipes(updatedFavorites);
-  }
+  // removeRecipeFromFavorites(
+  //   currentFavorites: Recipe[],
+  //   recipeIndex: number
+  // ): void {
+  //   const updatedFavorites = [...currentFavorites];
+  //   updatedFavorites.splice(recipeIndex, 1);
+  //   this._favoriteRecipesSubject.next(updatedFavorites);
+  //   this.saveFavoriteRecipes(updatedFavorites);
+  // }
 
-  private loadFavoriteRecipes(): void {
-    const savedRecipes = localStorage.getItem('favoriteRecipes');
-    if (savedRecipes) {
-      const parsedRecipes: Recipe[] = JSON.parse(savedRecipes);
-      this._favoriteRecipesSubject.next(parsedRecipes);
-    }
-  }
+  // private loadFavoriteRecipes(): void {
+  //   const savedRecipes = localStorage.getItem('favoriteRecipes');
+  //   if (savedRecipes) {
+  //     const parsedRecipes: Recipe[] = JSON.parse(savedRecipes);
+  //     this._favoriteRecipesSubject.next(parsedRecipes);
+  //   }
+  // }
 
-  private saveFavoriteRecipes(favoriteRecipes: Recipe[]): void {
-    localStorage.setItem('favoriteRecipes', JSON.stringify(favoriteRecipes));
-  }
-  isFavorite(recipe: Recipe): Observable<boolean> {
-    this.loadFavoriteRecipes();
+  // private saveFavoriteRecipes(favoriteRecipes: Recipe[]): void {
+  //   localStorage.setItem('favoriteRecipes', JSON.stringify(favoriteRecipes));
+  // }
+  // isFavorite(recipe: Recipe): Observable<boolean> {
+  //   this.loadFavoriteRecipes();
 
-    return this.favoriteRecipes$.pipe(
-      map((favoriteRecipes) => {
-        return favoriteRecipes.some((favRecipe) => favRecipe.id === recipe.id);
-      })
-    );
-  }
+  //   return this.favoriteRecipes$.pipe(
+  //     map((favoriteRecipes) => {
+  //       return favoriteRecipes.some((favRecipe) => favRecipe.id === recipe.id);
+  //     })
+  //   );
+  // }
 }
